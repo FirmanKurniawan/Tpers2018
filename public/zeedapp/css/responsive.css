@@ -1,0 +1,35 @@
+
+
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+
+	.footer-content {
+	    padding-top: 40px;
+	}
+}
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+	.col-2{
+		float: left;
+		width: 50%;
+	}
+	.counter-item {
+	    margin-bottom: 30px;
+	}
+    
+}
+
+
+/* Wide Mobile Layout: 480px. */
+
+@media only screen and (min-width: 240px) and (max-width: 480px) {
+	.crumbs-header .cd-headline span {
+	    font-size: 38px;
+	}
+	.counter-item {
+	    margin-bottom: 30px;
+	}
+	.footer-content h2 {
+	    font-size: 18px;
+	}
+    
+}
