@@ -45,12 +45,17 @@
                             <a href="{{url('login')}}">Masuk</a>
                         </div>
                         @else
+                        @if(Auth::user()->role == 1)
+                        <h2>ADMIN</h2>
+                        @else
+                        <h2>USER</h2>
+                        @endif
                         <p>Hai {{Auth::user()->name}}</p>
                         <div class="btn-area">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Keluar') }}
                             </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
@@ -179,9 +184,9 @@
         <div class="footer-area">
             <div class="container">
                 <div class="footer-content text-center">
-                    <h2>CREATE YOUR OWN WEBSITE TODAY !</h2>
+                    <h2>Kritik dan Saran?</h2>
                     <div class="btn-area">
-                        <a href="#">Purchase Now</a>
+                        <a href="#">Kontak</a>
                     </div>
                     <p class="copy-right"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
