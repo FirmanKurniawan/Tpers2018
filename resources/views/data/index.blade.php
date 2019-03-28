@@ -137,6 +137,13 @@
     <!-- counter-box area end -->
     <!-- demo area start -->
     <div class="container">
+        <center>
+            <div class="col-md-12">
+                <div class="counter-item">
+                    <a href="/"><button class="btn btn-primary">Kembali</button></a>
+                </div>
+            </div>
+        </center>
       @foreach ($data as $datas1)
       @php
         $file = \App\File::where('id_matakuliah', 'id');
@@ -144,13 +151,15 @@
         $i = 1;
       @endphp
       @endforeach
+      <br>
+      <br>
       <table class="table table-bordered">
               <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Nama Pengupload</th>
                   <th scope="col">Judul</th>
-                  <th scope="col">File (Klik File Untuk Download)</th>
+                  <th scope="col">File</th>
                   <th colspan="3">Action</th>
                 </tr>
               </thead>
@@ -161,7 +170,7 @@
                   <td>{{$datas->nama}}</td>
                   <td>{{$datas->judul}}</td>
                   <td><a href="{{url('download/'.$datas->id)}}">{{$datas->nama_file}}</a></td>
-                  <td><a href="{{url('upload/delete/'.$datas->id)}}">Delete</a></td>
+                  <td><a href="{{url('download/'.$datas->id)}}">Download</a></td>
                 </tr>
                 @endforeach
               </tbody>

@@ -165,7 +165,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-12 col-2">
                     <div class="demo-item">
                         <div class="thumb-area">
-                            <a href="zeedapp/index.html" target="_blank"><img src="{{asset('zeedapp/img/demo-thumb/index.jpg')}}" alt="demo image"></a>
+                            <a href="{{url('data/'.$indexs->id)}}" target="_blank"><img src="{{asset('zeedapp/img/demo-thumb/index.jpg')}}" alt="demo image"></a>
                             <a href="{{url('data/'.$indexs->id)}}" class="lets-view" target="_blank"><i class="fa fa-long-arrow-right"></i></a>
                         </div>
                         <div class="demo-title">
