@@ -40,7 +40,7 @@
                             </span>
                         </h2>
                         @guest
-                        <p>Zeedapp is a SaaS &amp; App Landing Startups Template</p>
+                        <p>Upload & Download Your Files</p>
                         <div class="btn-area">
                             <a href="{{url('login')}}">Masuk</a>
                         </div>
@@ -91,9 +91,52 @@
                     <div class="col-md-12 col-sm-4 col-xs-12 col-2">
                         <br>
                         <div class="btn-area">
-                            <a href="{{url('upload')}}">Upload Files</a>
+                            <a href="#exampleModal" data-target="#exampleModal" data-toggle="modal">Upload Files</a>
                         </div>
                     </div>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Upload File</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form method="POST" action="{{url('/upload/save')}}" enctype="multipart/form-data">
+    @csrf
+  <div class="form-row">
+    <div class="col-12">
+        <label>Mata Kuliah :</label>
+        @php
+            $matakuliah = \App\Matakuliah::all();
+        @endphp
+      <select name="matakuliah" class="form-control">
+        @foreach($matakuliah as $m)
+        <option value="{{$m->id}}">{{$m->nama_matakuliah}}</option>
+        @endforeach
+      </select>
+
+      <label>Judul :</label>
+      <input type="text" class="form-control" placeholder="Judul" name="judul">
+      <br>
+      <label>Nama :</label>
+      <input type="text" class="form-control" placeholder="Nama Anda" name="nama">
+    </div>
+    <div class="col-12">
+        <br>
+        <label>Upload File :</label>
+      <input type="file" class="form-control" name="gambar[]">
+    </div>
+  </div>
+<br>
+<button type="submit" class="btn btn-primary">Upload</button>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
                     @endguest
                 </div>
             </div>
@@ -103,6 +146,15 @@
     <!-- demo area start -->
     <div class="demo-area">
         <div class="container">
+            <center>
+            <div class="col-md-12">
+                <div class="counter-item">
+                    <h1>Mata Kuliah</h1>
+                </div>
+            </div>
+            </center>
+            <br>
+            <br>
             <div class="row">
                 @foreach ($index as $indexs)
                 <div class="col-md-4 col-sm-4 col-xs-12 col-2">
@@ -144,6 +196,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{asset('zeedapp/js/jquery-3.2.0.min.js')}}"></script>
     <script src="{{asset('zeedapp/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('zeedapp/js/animatedheadline.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('zeedapp/js/counterup.js')}}"></script>
     <script src="{{asset('zeedapp/js/jquery.waypoints.min.js')}}"></script>
     <script src="{{asset('zeedapp/js/theme.js')}}"></script>
